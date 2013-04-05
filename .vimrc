@@ -19,7 +19,7 @@ set wildmenu
 set path=.
 
 syntax on
-colorscheme sahara
+colorscheme Tomorrow-Night-Bright
 
 set guioptions=ai
 if has ("gui_running")

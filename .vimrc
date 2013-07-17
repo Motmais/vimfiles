@@ -48,5 +48,7 @@ if has("gui_running")
   elseif has("gui_win32")
     set guifont=Consolas:h11:cANSI
     map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<CR>
+  else
+    set guifont=Consolas:h13
   endif
 endif

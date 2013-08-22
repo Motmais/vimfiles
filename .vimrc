@@ -5,7 +5,6 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 set textwidth=80
-
 set backspace=2
 
 set ic
@@ -13,13 +12,18 @@ set scs
 
 set number
 set ruler
+
 set autochdir
 set wildmode=longest,list
 set wildmenu
 set path=.
 
+set autoread
+
+set splitright
+
 syntax on
-colorscheme Tomorrow-Night-Bright
+colorscheme Monokai
 
 set guioptions=ai
 if has ("gui_running")

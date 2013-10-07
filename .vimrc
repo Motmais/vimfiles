@@ -1,11 +1,14 @@
+call pathogen#infect()
+syntax on
+filetype plugin indent on
+
 set autoindent
 set cindent
 
 set expandtab
-set shiftwidth=2
-set softtabstop=2
+set shiftwidth=4
+set softtabstop=4
 set textwidth=80
-set backspace=2
 
 set ic
 set scs
@@ -22,19 +25,14 @@ set autoread
 
 set splitright
 
-syntax on
-colorscheme Monokai
+colorscheme Tomorrow-Night-Bright
 
 set guioptions=ai
 if has ("gui_running")
   set lines=999 columns=171
 endif
 
-filetype indent plugin on
-
-call pathogen#infect()
-
-au FileType python setlocal shiftwidth=4 softtabstop=4
+au FileType coffee setlocal shiftwidth=2 softtabstop=2
 let g:pyindent_open_paren = '&sw'
 
 au BufRead,BufNewFile *.mak setlocal textwidth=0
@@ -53,6 +51,6 @@ if has("gui_running")
     set guifont=Consolas:h11:cANSI
     map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<CR>
   else
-    set guifont=Consolas:h13
+    set guifont=Consolas:h14
   endif
 endif

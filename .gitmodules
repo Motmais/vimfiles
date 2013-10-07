@@ -7,3 +7,6 @@
 [submodule "bundle/vim-protobuf-syntax"]
 	path = bundle/vim-protobuf-syntax
 	url = https://github.com/jdevera/vim-protobuf-syntax.git
+[submodule "bundle/vim-coffee-script"]
+	path = bundle/vim-coffee-script
+	url = https://github.com/kchmck/vim-coffee-script.git

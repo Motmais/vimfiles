@@ -1,4 +1,20 @@
-call pathogen#infect()
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+if has("gui_running")
+  Bundle 'Valloric/YouCompleteMe'
+endif
+
+Bundle 'scrooloose/nerdtree'
+
+Bundle 'othree/html5.vim'
+Bundle 'derekwyatt/vim-scala'
+Bundle 'jdevera/vim-protobuf-syntax'
+Bundle 'kchmck/vim-coffee-script'
+
 syntax on
 filetype plugin indent on
 
@@ -6,9 +22,9 @@ set autoindent
 set cindent
 
 set expandtab
-set shiftwidth=4
-set softtabstop=4
-set textwidth=80
+set shiftwidth=2
+set softtabstop=2
+set tw=0
 
 set ic
 set scs
@@ -28,12 +44,9 @@ set splitright
 colorscheme Tomorrow-Night-Bright
 
 set guioptions=ai
-if has ("gui_running")
-  set lines=999 columns=171
-endif
 
-au FileType coffee setlocal shiftwidth=2 softtabstop=2
-let g:pyindent_open_paren = '&sw'
+au FileType python setlocal shiftwidth=4 softtabstop=4
+let g:pyindent_open_paren = '&sw * 2'
 
 au BufRead,BufNewFile *.mak setlocal textwidth=0
 au BufRead,BufNewFile *.mak setlocal nowrap

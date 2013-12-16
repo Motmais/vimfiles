@@ -10,6 +10,8 @@ endif
 
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
+Bundle 'tpope/vim-fugitive'
+Bundle 'Lokaltog/powerline'
 
 Bundle 'othree/html5.vim'
 Bundle 'derekwyatt/vim-scala'
@@ -29,21 +31,21 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 set tw=0
+set nowrap
 
 set ic
 set scs
 
 set number
-set ruler
 set cursorline
 
-set autochdir
 set wildmode=longest,list
 set wildmenu
 set path=.
 set autoread
 
 set splitright
+set splitbelow
 
 colorscheme Tomorrow-Night
 
@@ -70,13 +72,9 @@ if has("gui_running")
     set guifont=Consolas:h11:cANSI
     map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<CR>
   else
-    set guifont=Consolas:h14
+    set guifont=Inconsolata\ for\ Powerline:h15
   endif
 endif
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
 
 let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': [],
@@ -88,3 +86,9 @@ let g:syntastic_python_flake8_post_args="--ignore=E221,E501,E251,E203,W291,W293,
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 
 set completeopt=menuone
+
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+set laststatus=2
+set t_Co=256
+
+map <C-n> :NERDTreeToggle<CR>

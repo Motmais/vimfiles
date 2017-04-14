@@ -1,31 +1,34 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#begin()
 
 if has("gui_running")
-  Bundle 'Valloric/YouCompleteMe'
+  Plugin 'Valloric/YouCompleteMe'
 endif
 
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
-Bundle 'tpope/vim-fugitive'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'Lokaltog/powerline'
-Bundle 'kien/ctrlp.vim'
-Bundle 'xolox/vim-misc'
-Bundle 'xolox/vim-easytags'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'kien/ctrlp.vim'
+Plugin 'xolox/vim-misc'
 
-Bundle 'othree/html5.vim'
-Bundle 'derekwyatt/vim-scala'
-Bundle 'jdevera/vim-protobuf-syntax'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'hynek/vim-python-pep8-indent'
-Bundle 'saltstack/salt-vim'
-Bundle 'lambdatoast/elm.vim'
-Bundle 'elixir-lang/vim-elixir'
+Plugin 'othree/html5.vim'
+Plugin 'derekwyatt/vim-scala'
+Plugin 'jdevera/vim-protobuf-syntax'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'hynek/vim-python-pep8-indent'
+Plugin 'saltstack/salt-vim'
+Plugin 'lambdatoast/elm.vim'
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+
+call vundle#end()
 
 syntax on
 filetype plugin indent on
@@ -53,7 +56,7 @@ set wildmode=longest,list
 set wildmenu
 set path=.
 set autoread
-set wildignore+=*.pyc
+set wildignore+=*.pyc,*/node_modules/*
 
 set splitright
 set splitbelow
@@ -94,6 +97,8 @@ if has("gui_macvim")
     set shell=/bin/bash\ -l
 endif
 
+let g:jsx_ext_required = 0
+
 let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': [],
                            \ 'passive_filetypes': ['html'] }
@@ -102,13 +107,13 @@ let g:syntastic_echo_current_error=1
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 let g:syntastic_python_flake8_post_args="--ignore=E501"
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
+let g:syntastic_javascript_checkers = ['eslint']
 
 let g:easytags_auto_highlight = 0 
 let g:easytags_async = 1
 
 set completeopt=menuone
 
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 set laststatus=2
 set t_Co=256
 

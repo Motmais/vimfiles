@@ -56,7 +56,7 @@ set wildmode=longest,list
 set wildmenu
 set path=.
 set autoread
-set wildignore+=*.pyc,*/node_modules/*
+set wildignore+=*.pyc,*/node_modules/*,.git/*
 
 set splitright
 set splitbelow

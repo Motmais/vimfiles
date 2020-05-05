@@ -1,34 +1,33 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-if has("gui_running")
-  Plugin 'Valloric/YouCompleteMe'
-endif
+"if has("gui_running")
+"  Plugin 'Valloric/YouCompleteMe'
+"endif
 
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
-Plugin 'kien/ctrlp.vim'
-Plugin 'xolox/vim-misc'
+Plug 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'kien/ctrlp.vim'
+Plug 'xolox/vim-misc'
 
-Plugin 'othree/html5.vim'
-Plugin 'derekwyatt/vim-scala'
-Plugin 'jdevera/vim-protobuf-syntax'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'hynek/vim-python-pep8-indent'
-Plugin 'saltstack/salt-vim'
-Plugin 'lambdatoast/elm.vim'
-Plugin 'elixir-lang/vim-elixir'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
+Plug 'othree/html5.vim'
+Plug 'derekwyatt/vim-scala'
+Plug 'jdevera/vim-protobuf-syntax'
+Plug 'kchmck/vim-coffee-script'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'hynek/vim-python-pep8-indent'
+Plug 'saltstack/salt-vim'
+Plug 'elixir-lang/vim-elixir'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'gosukiwi/vim-atom-dark'
 
-call vundle#end()
+call plug#end()
 
 syntax on
 filetype plugin indent on

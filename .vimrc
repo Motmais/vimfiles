@@ -1,33 +1,36 @@
 set nocompatible
 filetype off
 
-call plug#begin('~/.vim/plugged')
 
-"if has("gui_running")
-"  Plugin 'Valloric/YouCompleteMe'
-"endif
+if has("gui_running")
+  call plug#begin('~/.vim/plugged')
 
-Plug 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
-Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/syntastic'
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-Plug 'kien/ctrlp.vim'
-Plug 'xolox/vim-misc'
+  Plug 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
+  Plug 'scrooloose/nerdtree'
+  Plug 'scrooloose/syntastic'
+  Plug 'tpope/vim-fugitive'
+  Plug 'airblade/vim-gitgutter'
+  Plug 'kien/ctrlp.vim'
+  Plug 'xolox/vim-misc'
 
-Plug 'othree/html5.vim'
-Plug 'derekwyatt/vim-scala'
-Plug 'jdevera/vim-protobuf-syntax'
-Plug 'kchmck/vim-coffee-script'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'hynek/vim-python-pep8-indent'
-Plug 'saltstack/salt-vim'
-Plug 'elixir-lang/vim-elixir'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-Plug 'gosukiwi/vim-atom-dark'
+  Plug 'othree/html5.vim'
+  Plug 'derekwyatt/vim-scala'
+  Plug 'jdevera/vim-protobuf-syntax'
+  Plug 'kchmck/vim-coffee-script'
+  Plug 'nathanaelkane/vim-indent-guides'
+  Plug 'hynek/vim-python-pep8-indent'
+  Plug 'saltstack/salt-vim'
+  Plug 'elixir-lang/vim-elixir'
+  Plug 'pangloss/vim-javascript'
+  Plug 'mxw/vim-jsx'
+  Plug 'gosukiwi/vim-atom-dark'
+  Plug 'udalov/kotlin-vim'
 
-call plug#end()
+  call plug#end()
+
+  colorscheme atom-dark
+endif
+
 
 syntax on
 filetype plugin indent on
@@ -49,7 +52,7 @@ set scs
 
 set number
 set cursorline
-set colorcolumn=90
+set colorcolumn=100
 
 set wildmode=longest,list
 set wildmenu
@@ -60,12 +63,12 @@ set wildignore+=*.pyc,*/node_modules/*,.git/*
 set splitright
 set splitbelow
 
-colorscheme atom-dark
 
 set guioptions=ai
 set mouse=a
 
 au FileType python setlocal shiftwidth=4 softtabstop=4
+au FileType kotlin setlocal shiftwidth=4 softtabstop=4
 let g:pyindent_open_paren = '&sw * 2'
 
 au BufRead,BufNewFile *.mak setlocal textwidth=0
